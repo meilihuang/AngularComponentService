@@ -1,4 +1,60 @@
-<hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
+<div>
+	<ng-template *ngIf="detail; then detailtrue; else detailfalse"></ng-template>
+
+	<ng-template #detailtrue>
+		<table>
+			<tr>
+				<td><button (click)="Home()">Home</button></td>
+				<td><button (click)="FavoriteNote()">Favorite</button></td>
+			</tr>
+		</table>
+	</ng-template>
+
+	<ng-template #detailfalse>
+		<table>
+			<tr>
+				<td><button *ngIf="favorite" (click)="Home()">Home</button></td>
+				<td><button *ngIf="!favorite" (click)="DetailNote()">Detail</button></td>
+				<td><button (click)="FavoriteNote()">Favorite</button></td>
+			</tr>
+		</table>
+	</ng-template>
+
+
+	<router-outlet>
+		<ng-template *ngIf="!detail; then show; else hide"></ng-template>
+
+		<ng-template #show>
+			<table>
+				<tr>
+					<table>
+						<tr>
+							<td>Input Judul: </td>
+							<td><input type="text" [(ngModel)]="title"/> </td>
+						</tr>
+						<tr>
+							<td>Input Tanggal: </td>
+							<td><input type="date" [(ngModel)]="date"/> </td>
+						</tr>
+						<tr>
+							<td>Input Isi: </td>
+							<td><textarea [(ngModel)]="note"> </textarea></td>
+						</tr>
+						<tr>
+							<td><button (click)="Input()">Input</button></td>
+						</tr>
+					</table>
+				</tr>
+			</table>
+		</ng-template>
+
+		<ng-template #hide>
+			<table>
+				<tr>
+
+				</tr>
+			</table>
+		</ng-template>
+
+	</router-outlet>
+</div>

@@ -6,6 +6,7 @@ export class DataglobalService {
   private title : String = "";
   private date : String = "";
   private note : String = "";
+  private favo : Number = 0;
 
   constructor() { }
 
@@ -21,6 +22,10 @@ export class DataglobalService {
     return this.note;
   }
 
+  public getFavo(){
+    return this.favo;
+  }
+
   public setTitle(ntitle: String){
    this.title = ntitle ;
   }
@@ -31,6 +36,10 @@ export class DataglobalService {
 
   public setNote(nnote: String){
    this.note = nnote ;
+  }
+
+  public setFavo(nfavo: Number){
+    this.favo = nfavo;
   }
 
 }

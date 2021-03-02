@@ -25,27 +25,35 @@
 		<ng-template *ngIf="!detail; then show; else hide"></ng-template>
 
 		<ng-template #show>
-			<table>
-				<tr>
-					<table>
-						<tr>
-							<td>Input Judul: </td>
-							<td><input type="text" [(ngModel)]="title"/> </td>
-						</tr>
-						<tr>
-							<td>Input Tanggal: </td>
-							<td><input type="date" [(ngModel)]="date"/> </td>
-						</tr>
-						<tr>
-							<td>Input Isi: </td>
-							<td><textarea [(ngModel)]="note"> </textarea></td>
-						</tr>
-						<tr>
-							<td><button (click)="Input()">Input</button></td>
-						</tr>
-					</table>
-				</tr>
-			</table>
+			<ng-template *ngIf="!favorite; then showok; else hideok"></ng-template>
+
+			<ng-template #showok>
+				<table>
+					<tr>
+						<table>
+							<tr>
+								<td>Input Judul: </td>
+								<td><input type="text" [(ngModel)]="title"/> </td>
+							</tr>
+							<tr>
+								<td>Input Tanggal: </td>
+								<td><input type="date" [(ngModel)]="date"/> </td>
+							</tr>
+							<tr>
+								<td>Input Isi: </td>
+								<td><textarea [(ngModel)]="note"> </textarea></td>
+							</tr>
+							<tr>
+								<td><button (click)="Input()">Save</button></td>
+							</tr>
+						</table>
+					</tr>
+				</table>
+			</ng-template>
+
+			<ng-template #hideok>
+
+			</ng-template>
 		</ng-template>
 
 		<ng-template #hide>

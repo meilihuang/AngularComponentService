@@ -8,8 +8,7 @@ import { DataglobalService } from "./dataglobal.service";
   styleUrls: ["./app.component.css"]
 })
 export class AppComponent {
-
-  constructor (private router: Router, public globalvar: DataglobalService) {
+  constructor(private router: Router, public globalvar: DataglobalService) {
     this.title = globalvar.getTitle();
     this.date = globalvar.getDate();
     this.note = globalvar.getNote();
@@ -23,30 +22,30 @@ export class AppComponent {
   favorite: boolean = false;
   home: boolean = false;
 
-  Input(){
-    if (this.title=="" || this.date==" " || this.note==""){
+  Input() {
+    if (this.title == "" || this.date == " " || this.note == "") {
       alert("You must fill in all the blanks");
-    }
-    else{
+    } else {
       this.globalvar.setTitle(this.title);
       this.globalvar.setDate(this.date);
       this.globalvar.setNote(this.note);
+      alert("Your note has been saved!");
     }
   }
 
   DetailNote() {
     this.detail = true;
-    this.router.navigate(['/detail']);
+    this.router.navigate(["/detail"]);
   }
 
   FavoriteNote() {
     this.favorite = true;
-    this.router.navigate(['/favorite']);
+    this.router.navigate(["/favorite"]);
   }
 
   Home() {
     this.detail = false;
     this.favorite = false;
-    this.router.navigate(['/']);
+    this.router.navigate(["/"]);
   }
 }

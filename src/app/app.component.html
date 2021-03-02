@@ -1,6 +1,7 @@
 <div>
 	<ng-template *ngIf="detail; then detailtrue; else detailfalse"></ng-template>
 
+  <!-- if detail is pressed -->
 	<ng-template #detailtrue>
 		<table>
 			<tr>
@@ -9,7 +10,8 @@
 			</tr>
 		</table>
 	</ng-template>
-
+  
+<!-- if detail is not pressed -->
 	<ng-template #detailfalse>
 		<table>
 			<tr>

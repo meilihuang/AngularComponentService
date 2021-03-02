@@ -28,6 +28,7 @@ export class DetailComponent implements OnInit {
     }
   }
 
+//if button like is pressed
   Favorite() {
     if (this.favo == 0) {
       this.globalvar.setFavo(1);

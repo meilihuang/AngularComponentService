@@ -1,10 +1,12 @@
 <ng-template *ngIf="favo; then favtrue; else favfalse"></ng-template>
+<!-- if like  -->
 <ng-template #favtrue>
-	<h4>{{title}}</h4>
+	<h3>{{title}}</h3>
 	<p><i>{{date}}</i></p>
 	<p>{{note}}</p>
 </ng-template>
 
+<!-- if unliked -->
 <ng-template #favfalse>
 	<p>Don't have any favorite note</p>
 </ng-template>
